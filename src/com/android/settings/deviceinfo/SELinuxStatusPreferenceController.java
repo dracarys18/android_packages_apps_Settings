@@ -59,7 +59,11 @@ public class SELinuxStatusPreferenceController extends AbstractPreferenceControl
         } else if (!SELinux.isSELinuxEnforced()) {
             String status = mContext.getResources().getString(R.string.selinux_status_permissive);
             pref.setSummary(status);
-        }
+        else if(SELinux.isSELinuxEnforced()){
+           String status = mContext.getResources().getString(R.string.selinux_status_enforcing);
+            pref.setSummary(status);
+         }
+       }
     }
 }
 
